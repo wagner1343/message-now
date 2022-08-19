@@ -1,0 +1,32 @@
+{
+  "name": "@message_now/application",
+  "version": "0.0.1",
+  "description": "Message now application",
+  "main": "index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wagner1343/message-now.git"
+  },
+  "keywords": [
+    "message",
+    "now"
+  ],
+  "author": "Wagner S. W. Martins",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wagner1343/message-now/issues"
+  },
+  "homepage": "https://github.com/wagner1343/message-now#readme",
+  "dependencies": {
+    "typescript": "^4.7.4",
+    "@message_now/core": "0.0.1"
+  }
+}
