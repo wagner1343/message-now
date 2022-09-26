@@ -1,7 +1,7 @@
-import {MessageMeta} from "src/message/MessageMeta";
+import {MessageMeta} from "./MessageMeta";
+import {Entity, IEntity} from "../entity/Entity";
 
-export abstract class Message {
-    id?: string;
+export interface IMessage extends IEntity {
     body: string;
     createdAt: Date;
     meta: MessageMeta;
@@ -9,15 +9,19 @@ export abstract class Message {
     conversationId: string;
 }
 
-export function constructMessage(body: string, authorId: string, conversationId: string): Message {
-    return {
-        meta: {
-            deliveredTo: [],
-            readBy: []
-        },
-        conversationId,
-        body,
-        createdAt: new Date(Date.now()),
-        authorId
+export class Message extends Entity implements IMessage {
+    body: string;
+    createdAt: Date;
+    meta: MessageMeta;
+    authorId: string;
+    conversationId: string;
+
+    constructor(message: IMessage) {
+        super(message);
+        this.body = message.body;
+        this.createdAt = message.createdAt;
+        this.meta = message.meta;
+        this.authorId = message.authorId;
+        this.conversationId = message.conversationId;
     }
 }

@@ -1,9 +1,8 @@
-export {Conversation, ConversationType} from "src/conversation/Conversation";
-export {CreateDirectConversation} from "src/conversation/CreateDirectConversation";
-export {CreateGroupConversation} from "src/conversation/CreateGroupConversation";
-export {Entity} from "src/entity/Entity";
-export {Message} from "src/message/Message";
-export {AddMessageToConversation} from "src/message/AddMessageToConversation";
-export {MessageMeta} from "src/message/MessageMeta";
-export {Profile} from "src/Profile";
-export {User} from "src/User";
+export {Conversation, ConversationType, IConversation} from "./conversation/Conversation";
+export {CreateGroupConversation} from "./conversation/CreateGroupConversation";
+export {Entity, Create, IEntity} from "./entity/Entity";
+export {Message, IMessage} from "./message/Message";
+export {AddMessageToConversation} from "./message/AddMessageToConversation";
+export {MessageMeta, IMessageMeta} from "./message/MessageMeta";
+export {Profile} from "./Profile";
+export {User} from "./User";

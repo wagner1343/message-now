@@ -1,3 +1,3 @@
-export abstract class User {
+export class User {
     contacts?: string[];
 }

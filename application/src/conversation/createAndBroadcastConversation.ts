@@ -1,13 +1,13 @@
 import {Conversation} from "@message_now/core";
-import {ConversationRepository} from "src/conversation/ConversationRepository";
-import {ConversationMessagesRepository} from "src/message/ConversationMessagesRepository";
-import {broadcastConversationUpdated} from "src/conversation/broadcastConversationUpdated";
-import {UserConversationRepositoryFactory} from "src/conversation/UserConversationRepository";
+import {broadcastConversationUpdated} from "./broadcastConversationUpdated";
+import {Create} from "@message_now/core/src";
+import {IConversation} from "@message_now/core";
+import {ConversationRepository} from "../repository/ConversationRepository";
+import {UserConversationRepositoryFactory} from "../repository/factories/UserConversationRepositoryFactory";
 
 export const createAndBroadcastConversation = async (
-    conversation: Conversation,
+    conversation: Create<IConversation>,
     conversationRepository: ConversationRepository,
-    messageRepository: ConversationMessagesRepository,
     userConversationRepositoryFactory: UserConversationRepositoryFactory,
 ): Promise<Conversation> => {
     const createdConversation = await conversationRepository.save(conversation);

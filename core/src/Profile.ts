@@ -1,6 +1,6 @@
-import {Entity} from "src/entity/Entity";
+import {Entity} from "./entity/Entity";
 
-export abstract class Profile extends Entity {
+export class Profile extends Entity {
     name: string;
     avatarUrl?: string;
 }

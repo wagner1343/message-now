@@ -14,7 +14,7 @@ function ConversationComponent({conversation}: ConversationComponentProps) {
         <Grid container direction={"column"} height={"100%"}>
             <ConversationHeader conversation={conversation}/>
             <Grid item flexGrow={1}>
-                {conversation.isNotCreated || (<MessagesList conversation={conversation}/>)}
+                <MessagesList conversation={conversation}/>
             </Grid>
             <MessageInputField/>
         </Grid>

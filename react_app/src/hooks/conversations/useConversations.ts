@@ -2,6 +2,7 @@ import axios from "src/axios/axios";
 import useAuth from "src/hooks/auth/useAuth";
 import useCollection from "src/hooks/firebase/useCollection";
 import CreateMessageRequest from "src/models/CreateMessageRequest";
+import {IConversation} from "@message_now/core";
 import {Conversation} from "@message_now/core";
 
 export default function useConversations() {
@@ -10,7 +11,7 @@ export default function useConversations() {
             uid
         }
     } = useAuth();
-    const conversationsRef = useCollection<Conversation>(`/users/${uid}/conversations`, {
+    const conversationsRef = useCollection<IConversation>(`/users/${uid}/conversations`, {
         limit: 10
     });
 
@@ -19,16 +20,19 @@ export default function useConversations() {
         await axios.post(`/conversations/${conversationId}/messages`, createMessageRequest);
     }
 
-    const createConversation = async (name: string, participants: string[]) => {
-        return await axios.post(`/conversations`, {
+    const createConversation = async (name: string, participants: string[]): Promise<Conversation> => {
+        const response = await axios.post(`/conversations`, {
             participants,
             title: name
         });
+
+        return new Conversation(response.data);
     }
 
     return {
-        ...conversationsRef,
+        conversations: conversationsRef.ordered?.map((c) => new Conversation(c)),
         sendMessage,
-        createConversation
+        createConversation,
+        ...conversationsRef
     }
 }

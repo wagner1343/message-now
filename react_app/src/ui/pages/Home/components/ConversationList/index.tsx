@@ -4,7 +4,7 @@ import ConversationListHeader from "src/ui/pages/Home/components/ConversationLis
 import {useConversationsProvider} from "src/ui/components/ConversationsProvider";
 import ConversationListItemContainer from "src/ui/pages/Home/components/ConversationList/ConversationListItemContainer";
 
-function ConversationsList(props) {
+function ConversationsList() {
     const {conversations} = useConversationsProvider();
     console.log("conversations", conversations);
     return (

@@ -1,7 +1,7 @@
 import React, {createContext, Dispatch, SetStateAction, useContext, useState} from "react";
 import useConversations from "src/hooks/conversations/useConversations";
-import {Conversation} from "@message_now/core";
 import CreateMessageRequest from "src/models/CreateMessageRequest";
+import {Conversation} from "@message_now/core";
 
 interface ConversationsProviderType {
     selectedConversation?: Conversation;
@@ -24,7 +24,7 @@ export const useConversationsProvider = () =>
 export default function ConversationsProvider({children}) {
     const [selectedConversation, setSelectedConversation] = useState<Conversation>();
     const [isSendingMessage, setIsSendingMessage] = useState<boolean>(false);
-    const {isLoading: isLoadingConversations, ordered: conversations, sendMessage: sendMessageToConversation, createConversation} = useConversations();
+    const {isLoading: isLoadingConversations, conversations, sendMessage: sendMessageToConversation, createConversation} = useConversations();
 
     const sendMessage = async ( createMessageRequest: CreateMessageRequest) => {
         if(!selectedConversation) {

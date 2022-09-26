@@ -1,4 +1,4 @@
-import {Message} from "src/message/Message";
+import {Message} from "./Message";
 
 export interface AddMessageToConversation {
     (conversationId: string, authorId: string, body: string): Promise<Message>;

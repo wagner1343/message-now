@@ -52,6 +52,7 @@ function StartConversationDialog({isOpen, onClose}: {
             setIsCreatingConversation(true);
             const createdConversation = await createConversation(conversationTitle, selectedContacts.map((c) => c.id));
             setSelectedConversation(createdConversation);
+            onClose();
         } catch (e) {
             console.log(e);
         } finally {

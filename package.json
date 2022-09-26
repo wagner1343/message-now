@@ -4,6 +4,10 @@
   "devDependencies": {},
   "workspaces": [
     "core",
+    "application",
+    "firebase",
+    "express_server",
+    "firebase_express_server",
     "react_app"
   ],
   "dependencies": {
