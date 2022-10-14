@@ -7,6 +7,7 @@ import makeConversationMessagesController from "./factories/controllers/makeConv
 import {authenticateFirebaseUser} from "@message_now/firebase";
 import {firebaseAuth} from "./firebase/firebase";
 import helmet from "helmet";
+import {makeGetConversation} from "./factories/usecases/conversations/makeGetConversation";
 
 process.env['GOOGLE_APPLICATION_CREDENTIALS'] = "keys/project-key.json";
 
@@ -17,7 +18,7 @@ server.use(helmet());
 server.use(cors());
 server.use(express.json());
 server.use(authenticateFirebaseUser(firebaseAuth as any));
-createServer(server, makeConversationsController(), makeConversationMessagesController());
+createServer(server, makeConversationsController(), makeConversationMessagesController(), makeGetConversation());
 
 server.listen(8080, () => {
     console.log("Listening on 8080 ...");

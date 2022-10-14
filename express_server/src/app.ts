@@ -1,14 +1,12 @@
-import middlewares from "./middlewares";
+import {notFound, errorHandler} from "./middlewares";
 import express from "express";
 import apiRoutes from "./apiRoutes";
-import {ConversationsController} from "./controllers/conversations";
-import {ConversationMessagesController} from "./controllers/conversationMessages";
+import {ConversationMessagesController, ConversationsController} from "./controllers";
+import {GetConversation} from "@message_now/core/src";
 
-export const createServer = (application: express.Application, conversationsController: ConversationsController, messagesController: ConversationMessagesController) => {
-    apiRoutes(application, conversationsController, messagesController);
+export const createServer = (application: express.Application, conversationsController: ConversationsController, messagesController: ConversationMessagesController, getConversation: GetConversation) => {
+    apiRoutes(application, conversationsController, messagesController, getConversation);
 
-    application.use(middlewares.notFound);
-    application.use(middlewares.errorHandler);
 
     return application;
 }

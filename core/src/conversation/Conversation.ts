@@ -1,13 +1,9 @@
 import {Entity, IEntity} from "../entity/Entity";
-import {Message} from "../message/Message";
+import {Message} from "../message";
+import {ConversationType} from "./ConversationType";
+import {IConversation} from "./IConversation";
 
-export interface IConversation extends IEntity {
-    avatarUrl?: string;
-    type: ConversationType;
-    participants: string[];
-    title?: string;
-    lastMessage?: Message;
-}
+
 
 export class Conversation extends Entity implements IConversation {
     avatarUrl?: string;
@@ -30,7 +26,4 @@ export class Conversation extends Entity implements IConversation {
     }
 }
 
-export enum ConversationType {
-    group = "group",
-    direct = "direct"
-}
+
