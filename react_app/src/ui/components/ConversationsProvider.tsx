@@ -8,9 +8,9 @@ interface ConversationsProviderType {
     setSelectedConversation: Dispatch<SetStateAction<Conversation | undefined>>;
     conversations?: Conversation[];
     isLoadingConversations: boolean;
-    sendMessage: (message: CreateMessageRequest ) => Promise<any>;
+    sendMessage: (message: CreateMessageRequest) => Promise<any>;
     isSendingMessage: boolean;
-    createConversation:  (name: string, participants: string[]) => Promise<any>;
+    createConversation: (name: string, participants: string[]) => Promise<any>;
 }
 
 const ConversationsContext =
@@ -24,20 +24,23 @@ export const useConversationsProvider = () =>
 export default function ConversationsProvider({children}) {
     const [selectedConversation, setSelectedConversation] = useState<Conversation>();
     const [isSendingMessage, setIsSendingMessage] = useState<boolean>(false);
-    const {isLoading: isLoadingConversations, conversations, sendMessage: sendMessageToConversation, createConversation} = useConversations();
+    const {
+        isLoading: isLoadingConversations,
+        conversations,
+        sendMessage: sendMessageToConversation,
+        createConversation
+    } = useConversations();
 
-    const sendMessage = async ( createMessageRequest: CreateMessageRequest) => {
-        if(!selectedConversation) {
+    const sendMessage = async (createMessageRequest: CreateMessageRequest) => {
+        if (!selectedConversation) {
             return;
         }
         try {
             setIsSendingMessage(true);
             await sendMessageToConversation(selectedConversation.id, createMessageRequest);
-        }
-        catch (e) {
+        } catch (e) {
             console.log(e);
-        }
-        finally {
+        } finally {
             setIsSendingMessage(false);
         }
     }

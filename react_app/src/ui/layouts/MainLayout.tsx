@@ -4,7 +4,7 @@ import useInitialize from "src/hooks/useInitialize";
 function MainLayout({children}) {
     const {isInitializing} = useInitialize();
 
-    if(isInitializing) {
+    if (isInitializing) {
         return null;
     }
     return children;

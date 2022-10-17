@@ -1,13 +1,13 @@
 import {appCreateGroupConversation} from "@message_now/application";
 import makeFirebaseConversationsRepository from "../../repositories/makeFirebaseConversationsRepository";
 import makeFirebaseMessagesRepository from "../../repositories/makeFirebaseMessagesRepository";
-import {makeLoggingEventChannelFactory} from "../../event/makeLoggingEventChannelFactory";
+import {makeSocketIoUserEventChannel} from "../../event/makeSocketIoUserEventChannel";
 
 const makeCreateGroupConversations =
     () => appCreateGroupConversation(
         makeFirebaseConversationsRepository(),
         makeFirebaseMessagesRepository(),
-        makeLoggingEventChannelFactory()
+        makeSocketIoUserEventChannel()
     );
 
 export default makeCreateGroupConversations;

@@ -4,7 +4,7 @@ import {ThemeProvider} from "@mui/material";
 
 function AppThemeProvider({children}) {
     return (
-        <ThemeProvider theme={ applicationTheme}>
+        <ThemeProvider theme={applicationTheme}>
             {children}
         </ThemeProvider>
     );

@@ -1,6 +1,4 @@
-import {
-    appListConversationsForUser
-} from "@message_now/application";
+import {appListConversationsForUser} from "@message_now/application";
 import makeFirebaseConversationsRepository from "../../repositories/makeFirebaseConversationsRepository";
 
 const makeListConversationsForUser = () => appListConversationsForUser(

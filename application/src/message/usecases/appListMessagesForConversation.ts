@@ -1,5 +1,5 @@
 import {ListMessagesForConversation} from "@message_now/core";
-import {MessagesRepository} from "../repository/MessagesRepository";
+import {MessagesRepository} from "../repository";
 
 export const appListMessagesForConversation = (
     messagesRepository: MessagesRepository

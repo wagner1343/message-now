@@ -1,7 +1,5 @@
-import {CreatedEvent} from "../entity/events/CreatedEvent";
-import {UpdatedEvent} from "../entity/events/UpdatedEvent";
-import {DeletedEvent} from "../entity/events/DeletedEvent";
 import {Message} from "./Message";
+import {CreatedEvent, DeletedEvent, UpdatedEvent} from "../entity";
 
 export type MessageEvent =
     CreatedEvent<"message-created", Message>

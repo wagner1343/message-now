@@ -1,4 +1,5 @@
 import * as admin from "firebase-admin";
+
 const firebaseConfig = {
     apiKey: "AIzaSyCqohZ7_KklINa4Jkx0GB0O7YJalgGOEvA",
     authDomain: "wagner-whatsapp-clone.firebaseapp.com",

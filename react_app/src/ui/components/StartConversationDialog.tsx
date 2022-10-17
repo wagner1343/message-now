@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import {
-    Avatar, Box, Button,
+    Avatar,
+    Box,
+    Button,
     Chip,
     Dialog,
     DialogContent,
-    DialogContentText,
     DialogTitle,
     List,
     TextField,
@@ -102,9 +103,9 @@ function StartConversationDialog({isOpen, onClose}: {
                 }}>
                     {availableContacts.length === 0 && (
                         <div>
-                        <Button>
-                            Add contact
-                        </Button>
+                            <Button>
+                                Add contact
+                            </Button>
                         </div>
                     )}
                     {availableContacts.length > 0 && (

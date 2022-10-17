@@ -1,4 +1,4 @@
-import {Event} from "../../event/Event";
+import {Event} from "../../event";
 
 export interface DeletedEvent<TEventType, TEntity> extends Event<TEventType, TEntity> {
 

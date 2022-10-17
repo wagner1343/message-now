@@ -18,7 +18,8 @@ function ConversationListItemContainer({key, conversation}: ConversationListItem
         <ConversationListItem
             isSelected={selectedConversation?.id === conversation.id}
             onClick={() => setSelectedConversation(conversation)}
-            key={key} title={conversation.getTitle(uid)} lastMessage={conversation.lastMessage?.body ?? "Nenhuma mensagem"}
+            key={key} title={conversation.getTitle(uid)}
+            lastMessage={conversation.lastMessage?.body ?? "Nenhuma mensagem"}
             avatar={<Avatar src={conversation.avatarUrl}/>}/>
     );
 }

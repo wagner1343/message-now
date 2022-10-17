@@ -2,7 +2,7 @@ import {Router} from "express";
 import {ConversationMessagesController, ConversationsController} from "./controllers";
 import expressAsyncHandler from "express-async-handler";
 import {ensureIsConversationParticipant} from "./middlewares/conversation/ensureIsConversationParticipant";
-import {GetConversation} from "@message_now/core/src";
+import {GetConversation} from "@message_now/core";
 
 const apiRoutes = (router: Router, conversationsController: ConversationsController, messagesController: ConversationMessagesController, getConversation: GetConversation) => {
     const conversationsRouter = Router();

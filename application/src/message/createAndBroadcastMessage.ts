@@ -1,9 +1,9 @@
-import {MessagesRepository} from "./repository/MessagesRepository";
-import {ConversationsRepository} from "../conversation/repository/ConversationsRepository";
-import {broadcastUserEvent} from "../channel/user/broadcastUserEvent";
+import {MessagesRepository} from "./repository";
+import {ConversationsRepository} from "../conversation";
+import {broadcastUserEvent} from "../channel";
 import {Create, IMessage} from "@message_now/core";
-import {updateConversation} from "../conversation/updateConversation";
-import {UserEventChannelFactory} from "../channel/user/UserEventChannelFactory";
+import {updateConversation} from "../conversation";
+import {UserEventChannelFactory} from "../channel";
 
 export const createAndBroadcastMessage = async (
     message: Create<IMessage>,

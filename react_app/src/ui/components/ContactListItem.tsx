@@ -1,5 +1,6 @@
 import React, {Key, MouseEventHandler, ReactNode} from 'react';
 import {ListItemAvatar, ListItemButton, ListItemText} from "@mui/material";
+
 function ContactListItem({key, onClick, name, avatar}: {
     key?: Key,
     onClick?: MouseEventHandler,

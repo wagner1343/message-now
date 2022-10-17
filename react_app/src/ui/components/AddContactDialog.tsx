@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Button, Dialog, DialogContent, DialogContentText, DialogTitle, TextField} from "@mui/material";
-import {useFirebase, useFirestore} from "react-redux-firebase";
+import {useFirestore} from "react-redux-firebase";
 import useAuth from "src/hooks/auth/useAuth";
 import {Profile} from "@message_now/core";
 
@@ -11,9 +11,11 @@ interface AddContactDialogProps {
 
 function AddContactDialog({isOpen, onClose}: AddContactDialogProps) {
     const firestore = useFirestore();
-    const {userDataDoc: {
-        data: userData
-    }, addContact} = useAuth();
+    const {
+        userDataDoc: {
+            data: userData
+        }, addContact
+    } = useAuth();
     const [contactNotFound, setContactNotFound] = useState<boolean>(false);
     const [contactProfile, setContactProfile] = useState<Profile>();
     const [loading, setLoading] = useState<boolean>(false);
@@ -51,24 +53,22 @@ function AddContactDialog({isOpen, onClose}: AddContactDialogProps) {
             setAddingContact(true);
             await addContact(contactProfile.id);
             onClose();
-        }
-        catch (e) {
+        } catch (e) {
             console.log(e);
             setContactNotFound(true);
-        }
-        finally {
+        } finally {
             setAddingContact(false);
         }
     }
 
     const renderSearchButton = () => {
-        if(loading) {
+        if (loading) {
             return <Button disabled>Searching</Button>
         }
-        if(contactAlreadyExists) {
+        if (contactAlreadyExists) {
             return <Button disabled>Already added</Button>
         }
-        if(contactProfile) {
+        if (contactProfile) {
             return <Button onClick={() => handleAddContact(contactProfile)}>Add contact</Button>;
         }
 

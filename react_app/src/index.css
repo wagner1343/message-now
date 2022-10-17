@@ -1,21 +1,22 @@
 html::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
+
 html,
 body,
 #root {
-  height: 100%;
-  background: #f0f2f5;
-  margin: 0;
+    height: 100%;
+    background: #f0f2f5;
+    margin: 0;
 }
 
 body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-  monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }

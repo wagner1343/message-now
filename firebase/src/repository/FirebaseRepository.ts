@@ -1,7 +1,6 @@
 import firebaseAdmin from "firebase-admin";
+import {EntityQuery, EntityRepository} from "@message_now/application";
 import CollectionReference = firebaseAdmin.firestore.CollectionReference;
-import {EntityRepository} from "@message_now/application";
-import {EntityQuery} from "@message_now/application";
 
 export class FirebaseRepository<TEntity>
     implements EntityRepository<TEntity, TEntity> {

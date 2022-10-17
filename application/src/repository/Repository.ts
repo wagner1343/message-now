@@ -1,4 +1,4 @@
-import {Query} from "./query/Query";
+import {Query} from "./query";
 
 export interface Repository<TEntity, TCreate, TUpdate, TKey, TQuery extends Query<any>> {
     get(id: TKey): Promise<TEntity>;

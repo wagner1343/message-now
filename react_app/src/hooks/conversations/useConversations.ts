@@ -2,8 +2,7 @@ import axios from "src/axios/axios";
 import useAuth from "src/hooks/auth/useAuth";
 import useCollection from "src/hooks/firebase/useCollection";
 import CreateMessageRequest from "src/models/CreateMessageRequest";
-import {IConversation} from "@message_now/core";
-import {Conversation} from "@message_now/core";
+import {Conversation, IConversation} from "@message_now/core";
 
 export default function useConversations() {
     const {

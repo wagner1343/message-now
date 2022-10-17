@@ -2,6 +2,7 @@ export interface IMessageMeta {
     readBy: string[];
     deliveredTo: string[];
 }
+
 export class MessageMeta {
     readBy: string[];
     deliveredTo: string[];

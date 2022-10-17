@@ -6,7 +6,6 @@ import LoadingScreen from "src/ui/components/LoadingScreen";
 import AuthGuard from "src/ui/components/guards/AuthGuard";
 import GuestGuard from "src/ui/components/guards/GuestGuard";
 import MainLayout from "src/ui/layouts/MainLayout";
-import * as Path from "path";
 import UserLayout from "src/ui/layouts/UserLayout";
 
 const routesConfig: RouteDefinition[] = [

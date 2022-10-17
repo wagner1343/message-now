@@ -1,6 +1,6 @@
 import express from "express";
 import {AddMessageToConversation} from "@message_now/core";
-import {Conversation, GetConversation, ListMessagesForConversation} from "@message_now/core/src";
+import {Conversation, GetConversation, ListMessagesForConversation} from "@message_now/core";
 
 export class ConversationMessagesController {
     private readonly _addMessageToConversation: AddMessageToConversation;
@@ -11,13 +11,6 @@ export class ConversationMessagesController {
         this._addMessageToConversation = addMessageToConversation;
         this._listMessagesForConversation = listMessagesForConversation;
         this._getConversation = getConversation;
-    }
-
-    private _conversation(res: express.Response): Conversation {
-        return res.locals.conversation;
-    }
-    private _userId(res: express.Response): string {
-        return res.locals.idToken.uid;
     }
 
     async create(req: express.Request, res: express.Response) {
@@ -33,5 +26,13 @@ export class ConversationMessagesController {
         const {limit, offset} = req.body;
         const conversation = this._conversation(res);
         res.json(await this._listMessagesForConversation(conversation.id, limit, offset));
+    }
+
+    private _conversation(res: express.Response): Conversation {
+        return res.locals.conversation;
+    }
+
+    private _userId(res: express.Response): string {
+        return res.locals.idToken.uid;
     }
 }

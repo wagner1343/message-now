@@ -9,7 +9,7 @@ export const appAddMessageToConversation = (
     messageRepository: MessagesRepository,
     conversationRepository: ConversationsRepository,
     userChannelFactory: UserEventChannelFactory
-    ): AddMessageToConversation => {
+): AddMessageToConversation => {
     return async (conversationId, authorId, body) => {
         return await createAndBroadcastMessage(
             createNewMessage(body, authorId, conversationId),

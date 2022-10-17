@@ -1,9 +1,7 @@
-import {Conversation} from "@message_now/core";
-import {Create} from "@message_now/core";
-import {IConversation} from "@message_now/core";
-import {ConversationsRepository} from "./repository/ConversationsRepository";
-import {UserEventChannelFactory} from "../channel/user/UserEventChannelFactory";
-import {broadcastUserEvent} from "../channel/user/broadcastUserEvent";
+import {Conversation, IConversation} from "@message_now/core";
+import {ConversationsRepository} from "./repository";
+import {UserEventChannelFactory} from "../channel";
+import {broadcastUserEvent} from "../channel";
 
 export const updateConversation = async (
     conversationId: string,

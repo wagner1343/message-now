@@ -30,6 +30,7 @@ export default function useAuth() {
             axios.defaults.headers.common.Authorization = `Bearer ${token}`;
         }
     }
+
     async function addContact(contactId: string) {
         const user = firebaseAuth.currentUser;
         if (!user) {

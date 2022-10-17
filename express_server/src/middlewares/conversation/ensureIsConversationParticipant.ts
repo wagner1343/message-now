@@ -1,4 +1,4 @@
-import {GetConversation} from "@message_now/core/src";
+import {GetConversation} from "@message_now/core";
 import express from "express";
 
 export const ensureIsConversationParticipant = (getConversation: GetConversation) => async function (req, res: express.Response, next) {
@@ -6,7 +6,7 @@ export const ensureIsConversationParticipant = (getConversation: GetConversation
     const userId = res.locals.idToken.uid;
 
     const conversation = await getConversation(conversationId);
-    if(!conversation.participants.some(p => p === userId)) {
+    if (!conversation.participants.some(p => p === userId)) {
         res.sendStatus(404);
         return;
     }

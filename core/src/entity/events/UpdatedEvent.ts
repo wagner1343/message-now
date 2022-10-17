@@ -1,5 +1,5 @@
-import {Event} from "../../event/Event";
+import {Event} from "../../event";
 
-export interface UpdatedEvent<TEventType, TEntity> extends Event<TEventType, {before: TEntity, after: TEntity}> {
+export interface UpdatedEvent<TEventType, TEntity> extends Event<TEventType, { before: TEntity, after: TEntity }> {
 
 }

@@ -3,7 +3,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import { Provider as ReactReduxProvider} from "react-redux";
+import {Provider as ReactReduxProvider} from "react-redux";
 import {ReactReduxFirebaseProvider} from "react-redux-firebase";
 import {createFirestoreInstance} from "redux-firestore";
 import store from "src/store";

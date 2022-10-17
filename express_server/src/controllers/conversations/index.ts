@@ -1,6 +1,5 @@
 import express from "express";
-import {CreateGroupConversation} from "@message_now/core";
-import {ListConversationsForUser} from "@message_now/core/src";
+import {CreateGroupConversation, ListConversationsForUser} from "@message_now/core";
 
 export class ConversationsController {
     private readonly _createGroupConversation: CreateGroupConversation;

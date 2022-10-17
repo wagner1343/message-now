@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button, Card, Grid} from "@mui/material";
 import useAuth from "src/hooks/auth/useAuth";
+
 function LoginPage() {
     const {signInWithGoogle} = useAuth();
     return (
